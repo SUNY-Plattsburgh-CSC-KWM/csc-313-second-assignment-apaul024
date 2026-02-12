@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=UTF-8>
+	  <title>CSC 313 Homework 2</title>
+</head>
+
+<script>
+runGame = function() {
+		team1= prompt ("Enter Team 1 Name:")
+		team2= prompt ("Enter Team 2 Name:")
+		team1score= Number(prompt("Enter score:"))
+		team2score= Number(prompt("Enter score:"))
+	let results;
+		if (team1score > team2score) {
+			result= team1+ " wins by " + (team1score-team2score);
+		} else if (team2score>team1score) {
+			result= team2+ " wins by " + (team2score-team1score);
+		} else {
+			result= "Tie: "+ team1score;
+		}	
+    const divId = document.getElementById("results");
+    const newPara = document.createElement("p");
+    newPara.textContent = result;
+    divId.appendChild(newPara);
+	}
+	
+</script>
+<body> 
+	 <button onclick="runGame()">Enter game results</button>
+	  <div id="results"></div>
+</body>
+</html>
